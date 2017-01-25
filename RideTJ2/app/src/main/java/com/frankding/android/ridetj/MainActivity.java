@@ -14,11 +14,18 @@ public class MainActivity extends AppCompatActivity {
     private Button mSignup;
     private static String mUsername;
     private static String mPassword;
+    private Firebase ref;
+    private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/"
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Firebase.setAndroidContext(this);
+        ref = new Firebase(FIREBASE_URL);
+
 
         mEmailfield = (EditText)findViewById(R.id.editText);
         mPassfield = (EditText)findViewById(R.id.editText2);
@@ -30,6 +37,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mUsername = mEmailfield.getText().toString();
                 mPassword = mPassfield.getText().toString();
+                ref.addValueEventListener(new ValueEventListner() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot){
+
+                    }
+                    @Override
+                    public void onCancelled(FirebaseError databaseError){
+                        System.out.println("The read failed: "+databaseError.getCode());
+                    }
+
+                });
             }
         });
 
