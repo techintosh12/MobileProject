@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mUsername = mEmailfield.getText().toString();
                 mPassword = mPassfield.getText().toString();
+            }
+        });
+
+        mSignup.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
 
             }
         });
