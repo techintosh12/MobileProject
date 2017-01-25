@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.frankding.android.ridetj.RegisterActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light">
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:padding="24dp"
+        android:textColor="#000000"
+        android:textSize="36dp"
+        android:id="@+id/registerTitleTV"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullNameET"
+        android:layout_gravity="center_horizontal"
+        android:hint="Full Name"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailET"
+        android:layout_gravity="center_horizontal"
+        android:hint="Email (@tjhsst.edu)"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/streetAddressET"
+        android:layout_gravity="center_horizontal"
+        android:hint="Street Address"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" android:layout_gravity="center_horizontal">
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityET"
+            android:layout_gravity="center_horizontal"
+            android:hint="City"/>
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/stateET"
+            android:layout_gravity="center_horizontal"
+            android:hint="State (abbrev)"/>
+
+    </LinearLayout>
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/passwordET"
+        android:layout_gravity="center_horizontal"
+        android:hint="Password"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="Register"
+        android:id="@+id/registerBTN"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18dp"
+        android:background="#d7ffffff"/>
+
+</LinearLayout>
