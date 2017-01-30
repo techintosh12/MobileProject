@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "761601319025-4hber84qglvu84920gt7tsbue99fh552.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frankding.android.ridetj",
+            "certificate_hash": "91D2380E2317E21FE00521FB5F3AAFEF84F11384"
+          }
+        },
+        {
           "client_id": "761601319025-af54g8ij9vmpot7b927qlcv3qifd9fe3.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "761601319025-af54g8ij9vmpot7b927qlcv3qifd9fe3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

@@ -6,6 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText mEmailfield;
@@ -15,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private static String mUsername;
     private static String mPassword;
     private Firebase ref;
-    private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/"
+    private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/";
 
 
     @Override
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mUsername = mEmailfield.getText().toString();
                 mPassword = mPassfield.getText().toString();
-                ref.addValueEventListener(new ValueEventListner() {
+                ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot){
 
