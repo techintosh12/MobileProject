@@ -19,52 +19,43 @@
         android:layout_height="wrap_content"
         android:id="@+id/fullNameET"
         android:layout_gravity="center_horizontal"
-        android:hint="Full Name"/>
+        android:hint="Full Name" android:background="#ffffff" android:padding="10dp"/>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/gradYearET"
         android:layout_gravity="center_horizontal"
-        android:hint="Graduation Year"/>
+        android:hint="Graduation Year"
+        android:padding="10dp"
+        android:background="#ffffff"/>
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/streetAddressET"
-        android:layout_gravity="center_horizontal"
-        android:hint="Street Address"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/cityET"
-            android:layout_gravity="center_horizontal"
-            android:hint="City"/>
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/stateET"
-            android:layout_gravity="center_horizontal"
-            android:hint="State (abbrev)"/>
-
-    </LinearLayout>
-
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:id="@+id/passwordET"
         android:layout_gravity="center_horizontal"
-        android:hint="Password"/>
+        android:hint="Password" android:padding="10dp" android:background="#ffffff"/>
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/regionSPIN"
+        android:padding="10dp"
+        android:background="#ffffff"
+        android:elevation="12dp"
+        android:paddingBottom="5dp"
+        android:entries="@array/spinnerItems"/>
     <Space
         android:layout_width="match_parent"
         android:layout_height="20dp"
@@ -76,6 +67,6 @@
         android:text="Register"
         android:id="@+id/registerBTN"
         android:layout_gravity="center_horizontal"
-        android:textSize="18dp"/>
+        android:textSize="18dp" android:padding="10dp" android:background="@color/colorPrimary"/>
 
 </LinearLayout>
