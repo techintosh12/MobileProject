@@ -1,5 +1,7 @@
 package com.frankding.android.ridetj;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +23,13 @@ public class MainActivity extends AppCompatActivity {
     private static String mPassword;
     private Firebase ref;
     private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/";
+    private static final int REQUEST_CODE_USER = 1;
 
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode, Intent data) {
+        if (resultCode != Activity.RESULT_OK)
+            return;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
         mSignup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-
+                Intent i = RegisterActivity.newIntent(MainActivity.this);
+                startActivityForResult(i,REQUEST_CODE_USER);
             }
         });
 
