@@ -16,7 +16,7 @@ import static com.frankding.android.ridetj.R.id.editText;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullNameET;
-    private EditText gradYearET;
+    private EditText emailET;
     private Spinner regionSPIN;
     private EditText passwordET;
     private Button mSubmit;
@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         fullNameET = (EditText)(findViewById(R.id.fullNameET));
-        gradYearET = (EditText)(findViewById(R.id.gradYearET));
+        emailET = (EditText)(findViewById(R.id.emailET));
         regionSPIN = (Spinner)(findViewById(R.id.regionSPIN));
         passwordET = (EditText)(findViewById(R.id.passwordET));
         mSubmit = (Button)findViewById(R.id.registerBTN);
@@ -47,14 +47,15 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mUserInfo = new ArrayList<String>();
                 String fullName = fullNameET.getText().toString();
-                int gradYear = Integer.parseInt(gradYearET.getText().toString());
+                String email = emailET.getText().toString();
                 String region = regionSPIN.getSelectedItem().toString();
                 String password = passwordET.getText().toString();
                 mUserInfo.add(fullName);
-                mUserInfo.add(Integer.toString(gradYear));
                 mUserInfo.add(region);
                 mUserInfo.add(password);
+                mUserInfo.add(email);
                 setUserResult(mUserInfo);
+                finish();
             }
         });
 

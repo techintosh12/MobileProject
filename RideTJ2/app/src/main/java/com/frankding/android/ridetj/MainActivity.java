@@ -13,12 +13,16 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText mEmailfield;
     private EditText mPassfield;
     private Button mLogin;
     private Button mSignup;
+    private User mNewUser;
+    private ArrayList<String> mSignInfo;
     private static String mUsername;
     private static String mPassword;
     private Firebase ref;
@@ -29,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode,int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK)
             return;
+        if (requestCode == REQUEST_CODE_USER){
+            if(data==null)
+                return;
+            mSignInfo = RegisterActivity.user(data);
+            mNewUser = new User(mSignInfo.get(0),mSignInfo.get(1),mSignInfo.get(2),mSignInfo.get(3));
+            ref.child("0").setValue(mNewUser);
+        }
     }
 
     @Override
