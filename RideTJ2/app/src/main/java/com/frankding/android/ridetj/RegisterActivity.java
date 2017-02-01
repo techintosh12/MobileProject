@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import java.util.ArrayList;
 
@@ -16,9 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullNameET;
     private EditText gradYearET;
-    private EditText streetAddressET;
-    private EditText cityET;
-    private EditText stateET;
+    private Spinner regionSPIN;
     private EditText passwordET;
     private Button mSubmit;
     private ArrayList<String> mUserInfo;
@@ -40,9 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         fullNameET = (EditText)(findViewById(R.id.fullNameET));
         gradYearET = (EditText)(findViewById(R.id.gradYearET));
-        streetAddressET = (EditText)(findViewById(R.id.streetAddressET));
-        cityET = (EditText)(findViewById(R.id.cityET));
-        stateET = (EditText)(findViewById(R.id.stateET));
+        regionSPIN = (Spinner)(findViewById(R.id.regionSPIN));
         passwordET = (EditText)(findViewById(R.id.passwordET));
         mSubmit = (Button)findViewById(R.id.registerBTN);
         mSubmit.setOnClickListener(new View.OnClickListener() {
@@ -51,22 +48,15 @@ public class RegisterActivity extends AppCompatActivity {
                 mUserInfo = new ArrayList<String>();
                 String fullName = fullNameET.getText().toString();
                 int gradYear = Integer.parseInt(gradYearET.getText().toString());
-                String streetAddress = streetAddressET.getText().toString();
-                String city = cityET.getText().toString();
-                String state = stateET.getText().toString();
+                String region = regionSPIN.getSelectedItem().toString();
                 String password = passwordET.getText().toString();
                 mUserInfo.add(fullName);
                 mUserInfo.add(Integer.toString(gradYear));
-                mUserInfo.add(streetAddress);
-                mUserInfo.add(city);
-                mUserInfo.add(state);
+                mUserInfo.add(region);
                 mUserInfo.add(password);
                 setUserResult(mUserInfo);
             }
         });
-
-
-
 
         //now, need to load newUser into Firebase database.
     }

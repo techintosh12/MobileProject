@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">RideTJ</string>
+
+    <string-array name="spinnerItems">
+        <item>Herndon</item>
+        <item>Reston</item>
+        <item>McLean</item>
+        <item>Great Falls</item>
+    </string-array>
+
 </resources>
