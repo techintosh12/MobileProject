@@ -6,47 +6,28 @@ package com.frankding.android.ridetj;
 
 class User {
 
-    private String firstName;
-    private String lastName;
-    private int gradYear;
-    private String email;
-    private String address;
+    private String Name;
+    private String region;
+    private String username;
     private String password;
 
-    public User(String fullName, int gradYear, String address, String password){
-        this.firstName = fullName.split(" ")[0];
-        this.lastName = fullName.split(" ")[1];
-        this.gradYear = gradYear;
-        this.address = address;
+    public User(String fullName, String region, String password,String username){
+        this.Name = fullName;
         this.password = password;
-
-        String emailLast;
-        if(lastName.length() > 7)
-            emailLast = lastName.substring(0, 7);
-        else
-            emailLast = lastName.substring(0, lastName.length());
-
-        this.email = gradYear + firstName.substring(0, 1) + emailLast + "@tjhsst.edu";
+        this.username = username;
+        this.password = password;
     }
 
-    public String getFullName() {
-        return firstName + " " + lastName;
+    public String getName() {
+        return Name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getRegion() {
+        return region;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public int getGradYear() {
-        return gradYear;
-    }
-
-    public String getAddress() {
-        return address;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {

@@ -27,9 +27,9 @@
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/gradYearET"
+        android:id="@+id/emailET"
         android:layout_gravity="center_horizontal"
-        android:hint="Graduation Year"
+        android:hint="Username (letters and numbers)"
         android:padding="10dp"
         android:background="#ffffff"/>
 

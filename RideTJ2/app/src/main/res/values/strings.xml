@@ -2,10 +2,12 @@
     <string name="app_name">RideTJ</string>
 
     <string-array name="spinnerItems">
-        <item>Herndon</item>
-        <item>Reston</item>
-        <item>McLean</item>
-        <item>Great Falls</item>
+        <item>Herndon - Reston</item>
+        <item>Vienna - Oakton - Fairfax - Chantilly</item>
+        <item>Springfield - Annandale</item>
+        <item>Arlington - Alexandria</item>
+        <item>Tysons - Mclean - Falls Church</item>
+        <item>Ashburn - Dulles</item>
     </string-array>
 
 </resources>
