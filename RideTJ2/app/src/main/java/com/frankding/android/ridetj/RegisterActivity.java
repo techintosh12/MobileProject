@@ -63,7 +63,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        //now, need to load newUser into Firebase database.
     }
     private void setUserResult(ArrayList<String> user){
         Intent data = new Intent();
