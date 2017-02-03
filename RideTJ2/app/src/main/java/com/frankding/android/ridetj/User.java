@@ -1,9 +1,11 @@
 package com.frankding.android.ridetj;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * Created by frankding on 1/30/17.
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 class User {
 
     private String Name;
@@ -21,6 +23,9 @@ class User {
         this.password = password;
         this.region = region;
         this.phonenumber = phonenumber;
+    }
+    public User(){
+
     }
 
     public String getName() {

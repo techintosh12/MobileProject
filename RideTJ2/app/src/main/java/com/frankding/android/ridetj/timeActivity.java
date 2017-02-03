@@ -15,7 +15,7 @@ public class timeActivity extends AppCompatActivity {
     private Button mContinue;
 
     public static Intent newIntent(Context packageContext,User user) {
-        Intent i = new Intent(packageContext, RegisterActivity.class);
+        Intent i = new Intent(packageContext, timeActivity.class);
         mUser = user;
         return i;
     }
