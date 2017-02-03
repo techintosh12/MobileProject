@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 catch(Exception e){
                     System.out.println(e);
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
