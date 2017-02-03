@@ -46,6 +46,8 @@
         android:text="Continue"
         android:id="@+id/contBTN"
         android:layout_gravity="center_horizontal"
-        android:textSize="18dp" android:padding="10dp" android:background="@color/colorPrimary"/>
+        android:textSize="18dp"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"/>
 
 </LinearLayout>

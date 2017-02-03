@@ -13,10 +13,10 @@ class User {
     private String username;
     private String password;
     private String phonenumber;
-    private boolean riding;
+    private boolean driving;
     private String time;
 
-    public User(String fullName, String region, String password,String username, String phonenumber){
+    public User(String fullName, String region, String password, String username, String phonenumber){
         this.Name = fullName;
         this.password = password;
         this.username = username;
@@ -24,6 +24,7 @@ class User {
         this.region = region;
         this.phonenumber = phonenumber;
     }
+
     public User(){
 
     }
@@ -48,12 +49,12 @@ class User {
         return phonenumber;
     }
 
-    public boolean isRiding() {
-        return riding;
+    public boolean isDriving() {
+        return driving;
     }
 
-    public void setRiding(boolean riding) {
-        this.riding = riding;
+    public void setDriving(boolean driving) {
+        this.driving = driving;
     }
 
     public String getTime() {

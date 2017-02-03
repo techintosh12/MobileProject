@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
@@ -27,5 +28,16 @@ public class timeActivity extends AppCompatActivity {
         mTimeslot = (Spinner)findViewById(R.id.regionSPIN);
         mDriving = (CheckBox)findViewById(R.id.checkBox);
         mContinue = (Button)findViewById(R.id.contBTN);
+
+        mContinue.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                String timeslot = mTimeslot.getSelectedItem().toString();
+                Boolean isDriving = mDriving.isChecked();
+
+                mUser.setTime(timeslot);
+                mUser.setDriving(isDriving);
+            }
+        });
     }
 }
