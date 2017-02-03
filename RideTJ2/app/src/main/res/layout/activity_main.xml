@@ -19,7 +19,7 @@
         android:id="@+id/editText"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:hint="TJHSST Student Email" android:layout_width="300dp" android:padding="10dp"
+        android:hint="Username" android:layout_width="300dp" android:padding="10dp"
         android:background="#ffffff"/>
 
     <EditText

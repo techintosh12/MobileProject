@@ -17,6 +17,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullNameET;
     private EditText emailET;
+    private EditText phoneET;
     private Spinner regionSPIN;
     private EditText passwordET;
     private Button mSubmit;
@@ -39,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         fullNameET = (EditText)(findViewById(R.id.fullNameET));
         emailET = (EditText)(findViewById(R.id.emailET));
+        phoneET = (EditText)(findViewById(R.id.phoneET));
         regionSPIN = (Spinner)(findViewById(R.id.regionSPIN));
         passwordET = (EditText)(findViewById(R.id.passwordET));
         mSubmit = (Button)findViewById(R.id.registerBTN);
@@ -50,10 +52,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = emailET.getText().toString();
                 String region = regionSPIN.getSelectedItem().toString();
                 String password = passwordET.getText().toString();
+                String phone = phoneET.getText().toString();
                 mUserInfo.add(fullName);
                 mUserInfo.add(region);
                 mUserInfo.add(password);
                 mUserInfo.add(email);
+                mUserInfo.add(phone);
                 setUserResult(mUserInfo);
                 finish();
             }
