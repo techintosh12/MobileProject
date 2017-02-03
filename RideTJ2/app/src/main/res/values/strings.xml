@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">RideTJ</string>
     <string name="login_fail">The Login Failed!</string>
-    <string-array name="spinnerItems">
+
+    <string-array name="regionItems">
         <item>Herndon - Reston</item>
         <item>Vienna - Oakton - Fairfax - Chantilly</item>
         <item>Springfield - Annandale</item>
@@ -15,7 +16,5 @@
         <item>Sports Practice (6:30 PM)</item>
         <item>Sports Practice (9:00 PM)</item>
     </string-array>
-
-
 
 </resources>

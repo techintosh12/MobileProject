@@ -19,7 +19,9 @@
         android:id="@+id/editText"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:hint="Username" android:layout_width="300dp" android:padding="10dp"
+        android:hint="Username"
+        android:layout_width="300dp"
+        android:padding="10dp"
         android:background="#ffffff"/>
 
     <EditText
@@ -30,7 +32,9 @@
         android:id="@+id/editText2"
         android:layout_alignTop="@+id/editText"
         android:layout_alignStart="@+id/editText"
-        android:hint="Password" android:padding="10dp" android:layout_width="300dp"
+        android:hint="Password"
+        android:padding="10dp"
+        android:layout_width="300dp"
         android:background="#ffffff"/>
 
     <Button
@@ -52,5 +56,14 @@
         android:layout_marginTop="16dp"
         android:id="@+id/button11"
         android:backgroundTint="?android:attr/colorButtonNormal" />
+
+    <ImageView
+        android:id="@+id/logoIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ridetj_logo_text"
+        android:layout_above="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:padding="30dp"/>
 
 </RelativeLayout>
