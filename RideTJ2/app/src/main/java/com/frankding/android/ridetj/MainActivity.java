@@ -81,10 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 mPassword = mPassfield.getText().toString();
                 try{
                 User temp = mData.child(mUsername).getValue(User.class);
-                if(mPassword.equals(temp.getPassword())){
+                if(mPassword.equals(temp.getPassword())) {
                     Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
-                    Intent j = timeActivity.newIntent(MainActivity.this,temp);
+                    Intent j = timeActivity.newIntent(MainActivity.this, temp);
                     startActivity(j);
+                }
+                    else{
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                 }
                 }
                 catch(Exception e){
