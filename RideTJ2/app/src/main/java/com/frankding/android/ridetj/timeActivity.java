@@ -9,11 +9,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Spinner;
 
+import com.firebase.client.Firebase;
+
 public class timeActivity extends AppCompatActivity {
     private static User mUser;
     private Spinner mTimeslot;
     private CheckBox mDriving;
     private Button mContinue;
+    private Firebase ref;
+    private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/";
 
     public static Intent newIntent(Context packageContext,User user) {
         Intent i = new Intent(packageContext, timeActivity.class);
@@ -25,6 +29,11 @@ public class timeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time);
+
+        Firebase.setAndroidContext(this);
+        ref = new Firebase(FIREBASE_URL);
+
+
         mTimeslot = (Spinner)findViewById(R.id.regionSPIN);
         mDriving = (CheckBox)findViewById(R.id.checkBox);
         mContinue = (Button)findViewById(R.id.contBTN);
@@ -37,6 +46,10 @@ public class timeActivity extends AppCompatActivity {
 
                 mUser.setTime(timeslot);
                 mUser.setDriving(isDriving);
+                ref.child(mUser.getUsername()).setValue(mUser);
+
+                Intent i = catchrideActivity.newIntent(timeActivity.this,mUser);
+                startActivity(i);
             }
         });
     }
