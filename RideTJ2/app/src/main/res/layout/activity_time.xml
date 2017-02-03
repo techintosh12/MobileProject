@@ -10,9 +10,16 @@
     android:background="#ff33b5e5">
 
 
+    <TextView
+        android:text="Create Ride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/createRideTV"
+        android:gravity="center" android:textSize="24sp" android:textColor="#000000"/>
+
     <Space
         android:layout_width="match_parent"
-        android:layout_height="5dp"/>
+        android:layout_height="20dp"/>
 
     <Spinner
         android:layout_width="300dp"
