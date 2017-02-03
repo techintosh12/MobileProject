@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -37,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
             if(data==null)
                 return;
             mSignInfo = RegisterActivity.user(data);
-            mNewUser = new User(mSignInfo.get(0),mSignInfo.get(1),mSignInfo.get(2),mSignInfo.get(3));
-            ref.child("0").setValue(mNewUser);
+            mNewUser = new User(mSignInfo.get(0),mSignInfo.get(1),mSignInfo.get(2),mSignInfo.get(3),mSignInfo.get(4));
+            ref.child(mSignInfo.get(3)).setValue(mNewUser);
         }
     }
 
@@ -64,7 +65,14 @@ public class MainActivity extends AppCompatActivity {
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot){
-
+                        User temp = dataSnapshot.child(mUsername).getValue(User.class);
+                        if(mPassword == temp.getPassword()){
+                            Intent i = timeActivity.newIntent(MainActivity.this,temp);
+                            startActivity(i);
+                        }
+                        else{
+                            Toast.makeText(MainActivity.this, "The Login Failed!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     @Override
                     public void onCancelled(FirebaseError databaseError){

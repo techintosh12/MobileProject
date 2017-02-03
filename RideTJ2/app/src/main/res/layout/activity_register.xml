@@ -24,6 +24,20 @@
     <Space
         android:layout_width="match_parent"
         android:layout_height="5dp"/>
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneET"
+        android:layout_gravity="center_horizontal"
+        android:hint="Phone Number"
+        android:background="#ffffff"
+        android:padding="10dp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="5dp" />
+
     <EditText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
