@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Firebase ref;
     private static final String FIREBASE_URL = "https://ridetj-e12cb.firebaseio.com/";
     private static final int REQUEST_CODE_USER = 1;
+    private DataSnapshot mData;
 
     @Override
     protected void onActivityResult(int requestCode,int resultCode, Intent data) {
@@ -50,6 +52,21 @@ public class MainActivity extends AppCompatActivity {
 
         Firebase.setAndroidContext(this);
         ref = new Firebase(FIREBASE_URL);
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot){
+                try{
+                mData = dataSnapshot;}
+                catch (Exception e){
+                    System.out.print(e);
+                }
+            }
+            @Override
+            public void onCancelled(FirebaseError databaseError){
+                System.out.println("The read failed: "+databaseError.getCode());
+            }
+
+        });
 
 
         mEmailfield = (EditText)findViewById(R.id.editText);
@@ -62,24 +79,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 mUsername = mEmailfield.getText().toString();
                 mPassword = mPassfield.getText().toString();
-                ref.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot){
-                        User temp = dataSnapshot.child(mUsername).getValue(User.class);
-                        if(mPassword == temp.getPassword()){
-                            Intent i = timeActivity.newIntent(MainActivity.this,temp);
-                            startActivity(i);
-                        }
-                        else{
-                            Toast.makeText(MainActivity.this, "The Login Failed!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                    @Override
-                    public void onCancelled(FirebaseError databaseError){
-                        System.out.println("The read failed: "+databaseError.getCode());
-                    }
-
-                });
+                try{
+                User temp = mData.child(mUsername).getValue(User.class);
+                if(mPassword.equals(temp.getPassword())){
+                    Toast.makeText(MainActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
+                    Intent j = timeActivity.newIntent(MainActivity.this,temp);
+                    startActivity(j);
+                }
+                }
+                catch(Exception e){
+                    System.out.println(e);
+                }
             }
         });
 
